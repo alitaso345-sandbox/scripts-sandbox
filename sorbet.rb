@@ -1,13 +1,16 @@
 # typed: true
 require 'sorbet-runtime'
 
-class Main
-  extend T::Sig
+module A; end
+module B; end
 
-  sig {void}
-  def self.main
-    puts 'Hello, World'
-  end
+def x
+  rand.round == 0 ? A : B
 end
 
-Main.main
+class Main
+  include x
+end
+
+# sorbet.rb:12: include must only contain constant literals https://srb.help/4002
+#     12 |  include x
