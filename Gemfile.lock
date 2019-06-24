@@ -1,13 +1,28 @@
+GIT
+  remote: https://github.com/edvakf/wagyu.git
+  revision: ceeeb7b94bc30407774154b18d8e84b7ac3e2496
+  specs:
+    wagyu (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
+    debug_inspector (0.0.3)
+    method_source (0.9.2)
     strong_json (1.1.0)
+    trace_location (0.9.3.1)
+      binding_of_caller
+      method_source
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   strong_json
+  trace_location
+  wagyu!
 
 BUNDLED WITH
    2.0.1
