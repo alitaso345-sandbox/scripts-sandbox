@@ -1,5 +1,7 @@
+# frozen_string_literal: string
+
 require 'active_record'
-require 'minitest/autorun'
+require 'minitest/unit'
 require 'logger'
 
 Minitest::Test = MiniTest::Unit::TestCase unless defined?(Minitest::Test)
