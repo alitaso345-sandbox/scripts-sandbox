@@ -8,12 +8,12 @@ obj = Foo.new
 
 # 任意のキーとメソッドの関係をハッシュに保持しておく
 methods = {
-  1 => obj.method(:foo),
-  2 => obj.method(:bar),
-  3 => obj.method(:baz)
+  1 => :foo,
+  2 => :bar,
+  3 => :baz
 }
 
-# キーを使って関連するメソッドを呼び出す
-p methods[1].call
-p methods[2].call
-p methods[3].call
+# レシーバを固定させる必要がないなら、Object#sendを使う方法もある
+p Foo.new.send(methods[1])
+p Foo.new.send(methods[2])
+p Foo.new.send(methods[3])
