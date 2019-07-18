@@ -127,6 +127,22 @@ class RecumbentBike < Bicycle
   end
 end
 
+class Vehicle
+  include Schedulable
+
+  def lead_days
+    3
+  end
+end
+
+class Mechanic
+  include Schedulable
+
+  def lead_days
+    4
+  end
+end
+
 require 'date'
 
 starting = Date.parse('2015/9/4')
@@ -134,3 +150,9 @@ ending = Date.parse('2015/9/10')
 
 b = Bicycle.new(tire_size: '23')
 b.schedulable?(starting, ending)
+
+v = Vehicle.new
+v.schedulable?(starting, ending)
+
+m = Mechanic.new
+m.schedulable?(starting, ending)
